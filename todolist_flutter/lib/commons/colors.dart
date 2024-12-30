@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 final backGround = Color(0xFF121212);
-final buttonColor = Color(0xFF8685E7);
+final buttonColor = Color(0xFF8875FF);
 final whiteColor = Color(0XFFFFFFFF);
 final white44 = Color(0x44FFFFFF);
 final white87 = Color(0x87FFFFFF);

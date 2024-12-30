@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:todolist/components/colors.dart';
+import 'package:todolist/pages/welcomepage/widgets/welcome_appbar.dart';
+import 'package:todolist/pages/welcomepage/widgets/welcome_body.dart';
+import 'package:todolist/pages/welcomepage/widgets/welcome_bottom.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -7,28 +9,9 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [
-          Text(
-            "Welcome to UpTodo",
-            style: TextStyle(
-              color: whiteColor,
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(
-            height: 42,
-          ),
-          Text(
-            "Please login to your account or create \nnew account to continue",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                color: white87, fontSize: 16, fontWeight: FontWeight.w400),
-          )
-        ],
-      ),
+      appBar: WelcomeAppbar(),
+      body: WelcomeBody(),
+      bottomNavigationBar: WelcomeBottom(),
     );
   }
 }

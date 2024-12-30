@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:todolist/components/colors.dart';
+import 'package:todolist/commons/colors.dart';
 import 'package:todolist/pages/loading/provider/laod_provider.dart';
 
 class Loading extends ConsumerStatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todolist/components/colors.dart';
+import 'package:todolist/commons/colors.dart';
 
 class SelectBar extends StatelessWidget {
   final int readIndex;

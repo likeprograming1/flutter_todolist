@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:todolist/components/colors.dart';
-import 'package:todolist/components/route.dart';
+import 'package:todolist/commons/colors.dart';
+import 'package:todolist/commons/route.dart';
 import 'package:todolist/pages/first/provider/page_provider.dart';
 
 class CustomBottomBar extends ConsumerWidget {
