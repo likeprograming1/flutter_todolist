@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:todolist/components/colors.dart';
 import 'package:todolist/pages/loading/provider/laod_provider.dart';
 
 class Loading extends ConsumerStatefulWidget {
@@ -22,7 +23,17 @@ class _LoadingState extends ConsumerState<Loading> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Icon(Icons.check_box), Text("Loading...")],
+          children: [
+            Icon(
+              Icons.check_box_outlined,
+              size: 113,
+              color: buttonColor,
+            ),
+            Text(
+              "UpTodo",
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+            )
+          ],
         ),
       ),
     );
