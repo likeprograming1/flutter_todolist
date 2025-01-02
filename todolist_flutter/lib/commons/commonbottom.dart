@@ -12,68 +12,76 @@ class _CommonbottomState extends State<Commonbottom> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none, // 부모 영역 바깥으로 표시되도록 설정
-      children: [
-        // BottomNavigationBar를 먼저 렌더링
-        BottomNavigationBar(
-          currentIndex: _currentIndex,
-          fixedColor: whiteColor,
-          unselectedItemColor: white44,
-          backgroundColor: Color(0xFF363636),
-          type: BottomNavigationBarType.fixed,
-          onTap: (int index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home, size: 24),
-              label: "Home",
+    return Positioned(
+      bottom: 0,
+      child: SizedBox(
+        width: double.infinity,
+        height: 100,
+        child: Stack(
+          clipBehavior: Clip.none, // 부모 영역 바깥으로 표시되도록 설정
+          children: [
+            // BottomNavigationBar를 먼저 렌더링
+            BottomNavigationBar(
+              currentIndex: _currentIndex,
+              fixedColor: whiteColor,
+              unselectedItemColor: white44,
+              backgroundColor: Color(0xFF363636),
+              type: BottomNavigationBarType.fixed,
+              onTap: (int index) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home, size: 24),
+                  label: "Home",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.calendar_month_outlined, size: 24),
+                  label: "Calendar",
+                ),
+                BottomNavigationBarItem(
+                  icon: SizedBox.shrink(),
+                  label: "",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.access_time_outlined, size: 24),
+                  label: "Focus",
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person, size: 24),
+                  label: "Profile",
+                ),
+              ],
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.calendar_month_outlined, size: 24),
-              label: "Calendar",
-            ),
-            BottomNavigationBarItem(
-              icon: SizedBox.shrink(),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.access_time_outlined, size: 24),
-              label: "Focus",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person, size: 24),
-              label: "Profile",
+
+            // Positioned로 FloatingActionButton 추가
+            Positioned(
+              bottom: 50, // 경계선 위로 올림
+              left: MediaQuery.of(context).size.width / 2 - 32, // 화면 중앙
+              child: SizedBox(
+                width: 64,
+                height: 64,
+                child: FloatingActionButton(
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  onPressed: () {
+                    debugPrint("test");
+                    if (mounted) {
+                      addTask(context);
+                    }
+                  },
+                  backgroundColor: buttonColor,
+                  child: Icon(Icons.add, color: Colors.white),
+                ),
+              ),
             ),
           ],
         ),
-
-        // Positioned로 FloatingActionButton 추가
-        Positioned(
-          bottom: 50, // 경계선 위로 올림
-          left: MediaQuery.of(context).size.width / 2 - 32, // 화면 중앙
-          child: SizedBox(
-            width: 64,
-            height: 64,
-            child: FloatingActionButton(
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50),
-              ),
-              onPressed: () {
-                if (mounted) {
-                  addTask(context);
-                }
-              },
-              backgroundColor: buttonColor,
-              child: Icon(Icons.add, color: Colors.white),
-            ),
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

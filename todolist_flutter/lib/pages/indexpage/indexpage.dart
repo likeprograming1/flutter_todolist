@@ -10,8 +10,11 @@ class IndexPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: IndexAppbar(),
-      body: IndexBody(),
-      bottomNavigationBar: Commonbottom(),
+      body: SizedBox(
+          width: double.infinity,
+          height: double.infinity,
+          child: Stack(children: [IndexBody(), Commonbottom()])),
+      // bottomNavigationBar: Commonbottom(),
     );
   }
 }
