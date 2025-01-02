@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:todolist/commons/route.dart';
 import 'package:todolist/pages/first/first.dart';
+import 'package:todolist/pages/indexpage/indexpage.dart';
 import 'package:todolist/pages/loading/loading.dart';
 import 'package:todolist/pages/login/login.dart';
+import 'package:todolist/pages/register/register.dart';
 import 'package:todolist/pages/welcomepage/welcome.dart';
 
 final mainRoute = GoRoute(
@@ -34,4 +36,19 @@ final mainRoute = GoRoute(
           return LoginPage();
         },
       ),
+      GoRoute(
+          name: RouteNames.register,
+          path: Routes.register,
+          builder: (context, state) {
+            return RegisterWidget();
+          }),
     ]);
+
+final indexPage = GoRoute(
+  name: RouteNames.indexpage,
+  path: Routes.indexpage,
+  builder: (context, state) {
+    return IndexPage();
+  },
+  // redirect: <RouteBase>[],
+);

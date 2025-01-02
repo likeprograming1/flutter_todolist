@@ -24,7 +24,7 @@ class WelcomeBottom extends StatelessWidget {
                 backgroundColor: buttonColor,
               ),
               onPressed: () {
-                GoRouter.of(context).pushNamed(RouteNames.login);
+                context.push(Routes.login);
               },
               child: Text(
                 "LOGIN",
@@ -48,7 +48,9 @@ class WelcomeBottom extends StatelessWidget {
                     side: BorderSide(color: buttonColor, width: 2.0)),
                 backgroundColor: backGround,
               ),
-              onPressed: () {},
+              onPressed: () {
+                context.push(Routes.register);
+              },
               child: Text(
                 "Create account",
                 style: TextStyle(

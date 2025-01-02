@@ -12,7 +12,6 @@ class CustomBody extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final int readIndex = ref.watch(pageReadProvvider).pageIndex;
 
-    debugPrint("index : $readIndex");
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Center(

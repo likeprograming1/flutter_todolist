@@ -3,6 +3,8 @@ class Routes {
   static const String load = '/load';
   static const String welcome = '/welcome';
   static const String login = '/login';
+  static const String register = '/register';
+  static const String indexpage = '/indexpage';
 }
 
 class RouteNames {
@@ -10,4 +12,6 @@ class RouteNames {
   static const String load = 'load';
   static const String welcome = 'welcome';
   static const String login = 'login';
+  static const String register = 'register';
+  static const String indexpage = 'indexpage';
 }

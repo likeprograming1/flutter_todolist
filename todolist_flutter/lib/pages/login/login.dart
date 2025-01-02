@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:todolist/commons/colors.dart';
+import 'package:todolist/pages/login/widgets/login_appbar.dart';
+import 'package:todolist/pages/login/widgets/login_body.dart';
+import 'package:todolist/pages/login/widgets/login_bottombar.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -8,22 +9,9 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: backGround,
-        leading: IconButton(
-            onPressed: () {
-              GoRouter.of(context).pop();
-            },
-            icon: Icon(
-              Icons.arrow_back_ios,
-              color: whiteColor,
-            )),
-      ),
-      body: SizedBox(
-        child: Center(
-          child: Text("LoginPage"),
-        ),
-      ),
+      appBar: LoginAppbar(),
+      body: LoginBody(),
+      bottomNavigationBar: LoginBottombar(),
     );
   }
 }

@@ -24,5 +24,5 @@ final Provider<GoRouter> routerProvider = Provider((ref) {
 
         return null;
       },
-      routes: <RouteBase>[mainRoute]);
+      routes: <RouteBase>[mainRoute, indexPage]);
 });
