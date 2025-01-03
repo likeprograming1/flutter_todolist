@@ -10,6 +10,9 @@ class Commonbottom extends StatefulWidget {
 
 class _CommonbottomState extends State<Commonbottom> {
   int _currentIndex = 0;
+  int _taskIndex = 0;
+  String task = "";
+  String description = "";
   final TextEditingController _taskController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
 
@@ -114,33 +117,45 @@ class _CommonbottomState extends State<Commonbottom> {
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 16),
-                    TextField(
-                      controller: _taskController,
-                      cursorColor: Colors.white,
-                      decoration: const InputDecoration(
-                        labelText: 'Enter your task',
-                        hintText: 'Enter your task',
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        border: OutlineInputBorder(),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
-                        ),
-                      ),
-                    ),
+                    _taskIndex == 0
+                        ? TextField(
+                            controller: _taskController,
+                            cursorColor: Colors.white,
+                            decoration: const InputDecoration(
+                              labelText: 'Enter your task',
+                              hintText: 'Enter your task',
+                              floatingLabelBehavior:
+                                  FloatingLabelBehavior.never,
+                              border: OutlineInputBorder(),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white),
+                              ),
+                            ),
+                            onChanged: (value) => setState(() {
+                              task = value;
+                            }),
+                          )
+                        : Text(task),
                     const SizedBox(height: 16),
-                    TextField(
-                      controller: _descriptionController,
-                      cursorColor: Colors.white,
-                      decoration: const InputDecoration(
-                        labelText: 'Enter your Description',
-                        hintText: 'Enter your Description',
-                        floatingLabelBehavior: FloatingLabelBehavior.never,
-                        border: OutlineInputBorder(),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
-                        ),
-                      ),
-                    ),
+                    _taskIndex == 1
+                        ? TextField(
+                            controller: _descriptionController,
+                            cursorColor: Colors.white,
+                            decoration: const InputDecoration(
+                              labelText: 'Enter your Description',
+                              hintText: 'Enter your Description',
+                              floatingLabelBehavior:
+                                  FloatingLabelBehavior.never,
+                              border: OutlineInputBorder(),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white),
+                              ),
+                            ),
+                            onChanged: (value) => setState(() {
+                              description = value;
+                            }),
+                          )
+                        : Text(description == "" ? "Description" : description),
                     const SizedBox(height: 16),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -166,13 +181,13 @@ class _CommonbottomState extends State<Commonbottom> {
                         ),
                         IconButton(
                           onPressed: () {
-                            final task = _taskController.text;
-                            final description = _descriptionController.text;
-
+                            setState(() {
+                              _taskIndex += 1;
+                            });
                             if (task.isNotEmpty && description.isNotEmpty) {
                               debugPrint('Task: $task');
                               debugPrint('Description: $description');
-                              Navigator.of(context).pop();
+                              // Navigator.of(context).pop();
                             } else {
                               debugPrint('Please fill in all fields');
                             }
