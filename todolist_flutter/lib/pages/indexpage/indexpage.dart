@@ -13,8 +13,10 @@ class IndexPage extends StatelessWidget {
       body: SizedBox(
           width: double.infinity,
           height: double.infinity,
-          child: Stack(children: [IndexBody(), Commonbottom()])),
-      // bottomNavigationBar: Commonbottom(),
+          child: Stack(children: [
+            IndexBody(),
+            Commonbottom(),
+          ])),
     );
   }
 }

@@ -150,22 +150,24 @@ class _LoginBodyState extends State<LoginBody> {
                   ),
                   minimumSize: Size(double.infinity, 48),
                 ),
-                child:
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Image(
-                    image: AssetImage("assets/login/apple.png"),
-                    width: 24,
-                    height: 24,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text("Login with Appe",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                          color: whiteColor))
-                ])),
+                child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image(
+                        image: AssetImage("assets/login/apple.png"),
+                        width: 24,
+                        height: 24,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("Login with Appe",
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: whiteColor))
+                    ])),
           ],
         ),
       ),
